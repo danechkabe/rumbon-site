@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
   groups.forEach((group) => {
     if (!group.rooms.length) return;
     let index = 0;
+    let popup;
     const container = el('div', 'popup-room');
     const draw = () => {
       container.replaceChildren();
@@ -68,15 +69,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const controls = el('div', 'popup-controls');
         const prev = el('button', '', '←'); prev.type = 'button'; prev.setAttribute('aria-label', t.previous);
         const next = el('button', '', '→'); next.type = 'button'; next.setAttribute('aria-label', t.next);
-        prev.addEventListener('click', () => { index = (index - 1 + group.rooms.length) % group.rooms.length; draw(); });
-        next.addEventListener('click', () => { index = (index + 1) % group.rooms.length; draw(); });
+        prev.addEventListener('click', (event) => { event.preventDefault(); event.stopPropagation(); index = (index - 1 + group.rooms.length) % group.rooms.length; draw(); popup?.update(); });
+        next.addEventListener('click', (event) => { event.preventDefault(); event.stopPropagation(); index = (index + 1) % group.rooms.length; draw(); popup?.update(); });
         controls.append(prev, el('span', '', `${index + 1} / ${group.rooms.length}`), next);
         container.append(controls);
       }
     };
     draw();
     const icon = L.divIcon({className:'price-marker',html:group.rooms[0].price,iconSize:[72,34],iconAnchor:[36,17]});
-    L.marker([group.lat, group.lng], {icon, keyboard:true, alt:group.rooms[0].title}).addTo(map).bindPopup(container);
+    popup = L.popup().setContent(container);
+    L.marker([group.lat, group.lng], {icon, keyboard:true, alt:group.rooms[0].title}).addTo(map).bindPopup(popup);
     bounds.push([group.lat, group.lng]);
   });
   if (bounds.length === 1) map.setView(bounds[0], 15);

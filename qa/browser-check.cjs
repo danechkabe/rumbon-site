@@ -1,7 +1,7 @@
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE || '/Users/mac/Downloads/jcode-lite-macos-x64-latest/preset/mcp/node_modules/playwright');
 const fs=require('fs');
 const assert=require('node:assert/strict');
-const origin=process.env.PREVIEW_URL || 'http://127.0.0.1:4173';
+const origin=(process.env.PREVIEW_URL || 'http://127.0.0.1:4173').replace(/\/$/,'');
 (async()=>{
  const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH || '/Users/mac/Library/Caches/ms-playwright/chromium-1217/chrome-mac-x64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing'});
  const page=await browser.newPage();
@@ -49,7 +49,7 @@ const origin=process.env.PREVIEW_URL || 'http://127.0.0.1:4173';
    assert.equal(response.status(),200);
    const meta=await page.locator('meta[property="og:title"]').getAttribute('content');assert.ok(meta.includes('Rumbon'));
    const image=await page.locator('meta[property="og:image"]').getAttribute('content');
-   assert.equal((await page.request.get(image.replace(/^https?:\/\/[^/]+/,origin))).status(),200);
+   assert.equal((await page.request.get(image)).status(),200);
  }
  await page.setViewportSize({width:375,height:812});
  await page.goto(`${origin}/uk/rooms/roma-areeiro-750/`,{waitUntil:'networkidle'});
