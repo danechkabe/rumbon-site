@@ -1,0 +1,24 @@
+{
+  "source": "initial-local",
+  "apartments": [],
+  "rooms": [
+    {
+      "id": "roma-areeiro-600", "name": "RA-600", "area": "Roma-Areeiro", "price": 600, "status": "available", "published": true, "incomplete": true, "order": 1,
+      "title": {"en":"A compact room, all your own", "uk":"Компактна кімната для себе", "pt":"Um quarto compacto só para si"},
+      "description": {"en":"A compact room with a bunk bed for one person in Roma-Areeiro. A simple place to start your Lisbon chapter.", "uk":"Компактна кімната з двоярусним ліжком для однієї людини в Roma-Areeiro. Простий початок вашого життя в Лісабоні.", "pt":"Um quarto compacto com beliche para uma pessoa em Roma-Areeiro. Um espaço simples para começar o seu capítulo em Lisboa."},
+      "bed": "bunk", "maxGuests": 1, "photos": []
+    },
+    {
+      "id": "roma-areeiro-750", "name": "RA-750", "area": "Roma-Areeiro", "price": 750, "status": "available", "published": true, "incomplete": true, "order": 2,
+      "title": {"en":"Your room. Your own bathroom.", "uk":"Своя кімната. Власна ванна.", "pt":"O seu quarto. A sua casa de banho."},
+      "description": {"en":"A room with a double bed, private bathroom, large wardrobe and mini fridge in Roma-Areeiro.", "uk":"Кімната з двоспальним ліжком, власною ванною, великою шафою й мініхолодильником у Roma-Areeiro.", "pt":"Quarto com cama de casal, casa de banho privativa, roupeiro grande e minifrigorífico em Roma-Areeiro."},
+      "bed": "double", "privateBathroom": true, "wardrobe": true, "miniFridge": true, "photos": []
+    },
+    {
+      "id": "roma-areeiro-650", "name": "RA-650", "area": "Roma-Areeiro", "price": 650, "status": "available", "published": true, "incomplete": true, "order": 3,
+      "title": {"en":"A double bed. A fresh start.", "uk":"Двоспальне ліжко. Новий початок.", "pt":"Uma cama de casal. Um novo começo."},
+      "description": {"en":"A room with a double bed in Roma-Areeiro, without a private bathroom. Make yourself at home in Lisbon.", "uk":"Кімната з двоспальним ліжком у Roma-Areeiro, без власної ванної кімнати. Почувайтеся вдома в Лісабоні.", "pt":"Quarto com cama de casal em Roma-Areeiro, sem casa de banho privativa. Sinta-se em casa em Lisboa."},
+      "bed": "double", "privateBathroom": false, "photos": []
+    }
+  ]
+}

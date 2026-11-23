@@ -1,0 +1,44 @@
+{
+  "results": [
+    {
+      "width": 320,
+      "overflow": false,
+      "columns": 2,
+      "cards": 3,
+      "language": "en",
+      "leaflet": true,
+      "markers": 0
+    },
+    {
+      "width": 375,
+      "overflow": false,
+      "columns": 2,
+      "cards": 3,
+      "language": "en",
+      "leaflet": true,
+      "markers": 0
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "columns": 2,
+      "cards": 3,
+      "language": "en",
+      "leaflet": true,
+      "markers": 0
+    },
+    {
+      "width": 1440,
+      "overflow": false,
+      "columns": 4,
+      "cards": 3,
+      "language": "en",
+      "leaflet": true,
+      "markers": 0
+    }
+  ],
+  "languageSwitch": true,
+  "deepLinks": 9,
+  "whatsapp": true,
+  "errors": []
+}
